@@ -1,13 +1,15 @@
 export function taskFirst() {
-	const firstName = 'Brigitte';
-	const lastName = 'Koranteng';
+	const task = 'I prefer const when I can.';
+	return task;
+}
 
-	return `I prefer const when I can.`;
+export function getLast() {
+	return ' is okay';
 }
 
 export function taskNext() {
-	let age = 26;
-	let occupation = 'Frontend Developer';
+	let combination = 'But sometimes let';
+	combination = combination + getLast();
 
-	return `But sometimes let is okay.`;
+	return combination;
 }
