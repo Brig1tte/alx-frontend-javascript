@@ -1,15 +1,16 @@
 export default function cleanSet(set, startString) {
+  // check if the beginning of the string is not empty and is a string
+  if (!startString || !startString.length || typeof startString !== 'string')
+	return '';
+
   // create an empty string to store cleaned set values
-  let cleanedString = '';
+  let result = '';
 
-  // iterate over the Set and check if each value starts with the startString
-  for (const value of set) {
-    if (typeof value === 'string' && value.startsWith(startString)) {
-      // if value starts with the startString, append the rest of the string to the cleanedString
-      cleanedString += value.slice(startString.length) + '-';
-    }
-  }
+  // iterate over the Set and slice the string form the startString length and append '-'
+  set.forEach((item) => {
+    if (item && item.startsWith(startString)) result += `${item.slice(startString.length)}-`;
+  });
 
-  // remove the last '-' character and return the cleanedString
-  return cleanedString.slice(0, -1);
+  // remove the last appended '-' character and return the result
+  return result.slice(0, result.length - 1);
 }
