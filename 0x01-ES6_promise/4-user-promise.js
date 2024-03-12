@@ -6,8 +6,3 @@ function signUpUser(firstName, lastName) {
     });
   });
 }
-
-signUpUser(' ', ' ').then(result => {
-  // handle the resolved value of the Promise
-  console.log(result); // { firstName: ' ', lastName: ' ' }
-});
